@@ -20,7 +20,7 @@ exports.getAllPublications = async (req, res) => {
 exports.getPublication = async (req, res) => {
   try {
     const id = req.params.id;
-    const Publication = await publicationModel.getById(id);
+    const publication = await publicationModel.getById(id);
     if (publication) {
       res.json(publication);
     } else {
