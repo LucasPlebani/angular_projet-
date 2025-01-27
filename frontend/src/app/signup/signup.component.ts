@@ -28,17 +28,3 @@ export class SignupComponent {
     // console.log('Password:', this.password);
   }
 }
-
-/*
-Comprendre l'observable : 
-const observable = new Observable(observer => {
-  observer.next(1);
-  observer.next(2);
-  observer.complete();
-});
-
-observable.subscribe({
-  next: value => console.log(value),
-  complete: () => console.log('Terminé')
-});
-*/

@@ -1,0 +1,26 @@
+.navBar {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  color: white;
+}
+
+.linkNavBar {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.linkNavBar a {
+  color: white;
+  text-decoration: none;
+}
+
+.linkNavBar a:hover {
+  text-decoration: underline;
+}
