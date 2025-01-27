@@ -1,6 +1,6 @@
 const { ObjectId } = require("mongodb");
 
-class MarchandiseModel {
+class PublicationModel {
   constructor(collection) {
     this.collection = collection;
   }
@@ -13,9 +13,9 @@ class MarchandiseModel {
     return await this.collection.findOne({ _id: new ObjectId(id) });
   }
 
-  async create(newMarchandise) {
-    const result = await this.collection.insertOne(newMarchandise);
-    return { _id: result.insertedId, ...newMarchandise };
+  async create(newPublication) {
+    const result = await this.collection.insertOne(newPublication);
+    return { _id: result.insertedId, ...newPublication };
   }
 
   async updateById(id, updatedFields) {
@@ -32,4 +32,4 @@ class MarchandiseModel {
   }
 }
 
-module.exports = MarchandiseModel;
+module.exports = PublicationModel;

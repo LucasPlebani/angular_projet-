@@ -1,7 +1,7 @@
 const express = require("express");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const userRoutes = require("./src/routes/UserRouter");
-const marchandiseRoutes = require("./src/routes/router");
+const publicationController = require('./src/controllers/publicationController');
 
 const app = express();
 const port = 3000;
@@ -17,20 +17,22 @@ const client = new MongoClient(uri, {
   },
 });
 
+
+publicationController.init(database.collection("article"));
+    console.log("Connexion réussie à MongoDB et initialisation du modèle");
+    app.use("/api/article", marchandiseRoutes); // Routes marchandises
+
 // Middleware global pour parser JSON
 app.use(express.json());
 
 async function run() {
   try {
     await client.connect();
-    const database = client.db("ExpressLucas");
+    const database = client.db("blogDB");
     app.locals.db = database;
     console.log("Connexion réussie à MongoDB");
 
-    //init marchandises
-    marchandiseController.init(database.collection("marchandises"));
-console.log("Connexion réussie à MongoDB et initialisation du modèle");
-app.use('/api/marchandises', marchandiseRoutes); // Routes marchandises
+   
 
     // Middleware pour injecter la collection "users" dans req
     app.use((req, res, next) => {
