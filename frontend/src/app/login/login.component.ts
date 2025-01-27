@@ -30,5 +30,5 @@ export class LoginComponent implements OnInit {
 
 // cors fait en sorte que les requêtes soient effectuées (sinon bloquées)
 // faire un service auth pour gérer l'authentification
-// apiUrl = 'http://localhost:3001';
+// apiUrl = 'http://localhost:3000';
 // faire une fonction ts qui va utiliser la requête de node
