@@ -23,7 +23,7 @@ app.use(express.json());
 async function run() {
   try {
     await client.connect();
-    const database = client.db("ExpressLucas");
+    const database = client.db("blogDB");
     app.locals.db = database;
     console.log("Connexion réussie à MongoDB");
 
